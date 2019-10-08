@@ -5,13 +5,18 @@ import { initialState, reducer } from '../reducers/reducer';
 
 
 
-const List = ({state}) => {
-    console.log(state, 'List state')
+const List = ({state, dispatch, todo}) => {
+    
+    const toggleTodo = (todo) => {
+        dispatch({type: 'TOGGLE_COMPLETED', payload: todo})
+    }
 
     return (
-        <div>
+        <div className='list'>
             {state.todos.map(item => (
-                <p>{item.item}</p>
+                <div className={item.completed ? 'list-item-completed' : 'list-item'}>
+                    <h1 onClick={() => toggleTodo(item)}>{item.item}</h1>
+                </div>
             ))}
         </div>
     )
