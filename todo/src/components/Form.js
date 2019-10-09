@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 
-const Form = ({ state, dispatch }) => {
+const Form = ({ dispatch }) => {
     const [todo, setTodo] = useState('')
     const handleChanges = e => {
         setTodo(e.target.value)
     }
-
     
     const addItem = e => {
         e.preventDefault();

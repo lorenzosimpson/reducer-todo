@@ -1,11 +1,8 @@
-import React, { useState, useReducer } from 'react';
-import { initialState, reducer } from '../reducers/reducer';
+import React from 'react';
 
 
 
-
-
-const List = ({state, dispatch, todo}) => {
+const List = ({state, dispatch}) => {
     
     const toggleTodo = (todo) => {
         dispatch({type: 'TOGGLE_COMPLETED', payload: todo})
