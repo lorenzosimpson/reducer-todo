@@ -1,18 +1,20 @@
 import React, {useState} from 'react'
 
-const Form = ({ dispatch }) => {
+const Form = ({ state, dispatch }) => {
     const [todo, setTodo] = useState('')
     const handleChanges = e => {
         setTodo(e.target.value)
     }
-    const submitForm = e => {
+
+    
+    const addItem = e => {
         e.preventDefault();
         dispatch({ type: 'ADD_TODO', payload: todo });
     }
     return (
-        <form onSubmit={submitForm}>
+        <form className='form'>
             <input type='text' name='task' value={todo} onChange={handleChanges}></input>
-            <button type='submit'>Add item</button>
+            <button onClick={addItem}>Add item</button>
         </form>
     )
 }

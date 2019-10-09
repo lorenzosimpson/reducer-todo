@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form dispatch={dispatch}/>
+      <Form dispatch={dispatch} state={state}/>
       <List dispatch={dispatch} state={state} />
     </div>
   );
